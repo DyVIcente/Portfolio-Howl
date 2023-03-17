@@ -3,7 +3,6 @@ import Tilt from 'react-tilt';
 import { motion } from 'framer-motion';
 
 import { projects } from '../constants';
-import { fadeIn, staggerContainer } from '../utils/motion';
 import { githubBlack } from '../assets';
 
 const Cards = ({
@@ -27,7 +26,7 @@ const Cards = ({
             <img
               src={image}
               alt='project_image'
-              className='w-full h-full object-cover rounded-2xl'
+              className='w-full h-full object-cover  rounded-2xl'
             />
   
             <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
@@ -70,23 +69,17 @@ const  Projets = () => {
     <>
     <div id='work' className='sm:scroll-mt-40 scroll-mt-20'>
         <div className='flex flex-wrap top-[120px] max-w-7xl mx-auto sm:px-16 px-6 items-end gap-10 mt-10'>
-
             <div>
-            <motion.div 
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: 'false', amount: 0.25 }}
-              >
             <motion.div
-              variants={fadeIn('left', 'spring', 0.2, 1 )}
-              >
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1}}
+                >
                 <h2 className='text-black font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-4'>
                     Portfolio.
                 </h2>
-              </motion.div>
-              </motion.div>
-
+                </motion.div>
                 <p className='mt-6 text-[#aaa6c3] text-[17px] max-w-3xl leading-[30px]' >
                     Voici quelques projets qui montrent mes compétences et mon expérience sur des 
                     exemples concrets. 

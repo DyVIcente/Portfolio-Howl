@@ -48,7 +48,7 @@ const Contact = () => {
 
                   MySwal.fire({
                     title: <strong>Merci pour votre message.</strong>,
-                    html: <i>Je reviens vers vous le plus vite.</i>,
+                    html: <i>Je reviens vers vous le plus vite possible.</i>,
                     icon: 'success'
                   })  
                 },

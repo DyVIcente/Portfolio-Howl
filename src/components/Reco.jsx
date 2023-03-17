@@ -2,9 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import { Recomendations } from '../constants/index';
-import { fadeIn, staggerContainer } from '../utils/motion';
-
-
 
 const RecoCard = ({
     index,
@@ -51,18 +48,16 @@ const Reco = () => {
           <div
             className=" rounded-2xl sm:px-16 px-6 sm:py-16 py-10 min-h-[300px]"
           >
-            <motion.div 
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: 'false', amount: 0.25 }}
-        >
             <motion.div
-                variants={fadeIn('left', 'spring', 0.2, 1 )}
-            >
-              <h2 className="text-black font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-4">FeedBack.</h2>
-            </motion.div>
-            </motion.div>
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1}}
+                >
+              <h2 className="text-black font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-4">
+                FeedBack.
+              </h2>
+              </motion.div>
             
           </div>
           <div className="-mt-20 pb-14 sm:px-16 px-6 flex flex-wrap gap-7">
